@@ -1,0 +1,141 @@
+Q1:
+Analyze the following code
+union A
+{
+int x;
+float y;
+double z;
+int arr[2];
+}a1;
+int main(){
+a1.y=6.25f;
+printf(“x=%x\n”, a1.x);
+a1.z=0.15625;;
+printf(“%x%x\n”,a1.arr[1],a1.arr[0]);
+}
+Analyze the output of above code.
+union B
+{
+int x;
+short int y;
+char ch;
+char carr[4];
+} b1;
+b1.x=0x41424344;
+Analyze the values of b1. y, b1.ch, print all elements of b1.carr
+Modify b1.y =0x1122 or b1.ch= 0 and check the value of b1.x
+Q2: Given the address of a member variable in a structure find the base address of it.
+For eg:- struct A {
+int x;
+double y;
+float z;
+char ch;
+} a1;
+
+given address of any member x, y, z or ch , find address(base) of a1.
+How will you do that, try finding the address of a1. Print to verify the same.
+
+Q3: Create a nested structure, access members of inner structure from outer one.
+(Structure inside structure), write a small program to implement the same.
+
+Q4: Write a C program, to initialize a given structure data members by calling another function
+from main, make sure the called function should not return anything to the caller.
+Hint, use pointers to data members.
+
+Q5: What’s wrong in the following code, suggest a fix for this. (TRY THE FOLLOWING CODE)
+to understand the logic.
+struct A
+{
+int x;
+char *str; // (or) char str[20];
+};
+struct A a1 = {101, “abc” } , a2;
+a1.x=10;
+a1.str=” hello”; //works?
+scanf(“%d%s”,&a1.x,a1.str); //works?
+a2 = a1; //shallow copy or deep copy?
+What if str is declared as an array instead of pointer, i.e. char str[20];
+Q6: Try out nesting of structures, unions
+(a) Union inside a structure
+(b) Structure/Structures inside a union
+(c) Union inside another union etc.
+
+Q7: Create an employee structure with the following members
+empid, employee name, salary, year of joining, gender, age, ID proofs (Adhar, Passport,
+Voter ID (any1))
+Note: Range of empid is 0 – 1000
+Range of age is 18 - 65
+Implement bit-fields, unions, typedef wherever possible
+Accept the data for certain no. of employees (Using array of structures) and find their total,
+average, max, min salary. Also find out the employees with maximum, minimum service,
+use a function to find service for each employee element in the array.
+Year of service is the number of years a given person has worked from joining year to
+current year.
+Q8
+Create a structure for student/employee information with suitable members and do the
+following
+- Creating variables, input, output operations
+- initialization (complete or partial) of variables
+- create a pointer of struct type, and assign address of variable
+- access members from the pointer using arrow operator
+- calculate size of variable, offset of each member
+- create alias for the structure type, pointer type using typedef
+Q9
+In the student structure created above modify marks member as an array(array of 5 subjects), create an
+array of struct variables and do some input, output operations.(Marks of ith student in jth subject
+etc).Find the student wise totals, subject wise totals.
+
+STRUCTURE, UNION, TYPEDEF, DYNAMIC MEMORY – Practice Questions
+Note: Every structure, union should be implemented using typedef, free the memory at the
+end. Make sure to check for memory leak in every program, there should be no memory leak
+Menu based programs are to be written.
+Use: valgrind for memory checks
+Q10: Using Nested structures, create a college portal for students and teachers. With the following
+information.
+For student:
+Name: Surname: Father’s Name: Age: Class: RollNum:
+
+ID proof anyone (Adhaar, Passport, DrivingL)
+18<= age range <= 26 0< roll range <= 550 1<= class <= 4
+
+For teacher:
+Name: Surname: Subject: Age: Joining year: RegNum:
+
+ID proof anyone (Adhaar, Passport, DrivingL)
+35<= age range <= 60 1<= reg num <= 50
+
+Use dynamic memory allocation wherever possible in the question. However, make sure that after
+running the program, operator should be able to select the category (student/teacher), based on
+category the requested data inputs should be taken.
+Program should be able to handle at least 4, 4 entries of both students and teachers.)
+
+Menu based
+Q11: Implement the Q1 by adding an additional feature wherein the user should be able to find
+theinformation about a teacher or student based on the Roll Num (for students) Reg Num(for
+teachers)So, implement a new section named as “Search” and ask the operator about the further
+section of search either Student or Teacher, then take respective inputs and find whether the
+respective person information is present or not, if present display the information, if not, display
+some message.
+Menu Based
+Q12: Implement the Q2 with one added sections named as “Modify user data”. However
+theonly data you can modify is Surname, age and class (for student) and Surname, age
+and joining year(for teacher).
+Q13:
+Implement a e-Book portal in using array and structure etc., which gives the option to the user to ADD,
+DISPLAY, FIND and FILTER book information.
+- ADD option should allow users to enter information of a given book, making sure there should
+not be an existing book with a matching ID number. One book info should be added at a time.
+- Book’s ID is a three-digit number.
+
+Following information is required to be stored.
+Book title, Book Author, Book ISBN, Book ID (SHOULD BE UNIQUE), Book
+Cost
+
+- FIND option should find a given book in the database with a provided Book ID number. If a
+match is found, it should display all the information of that book.
+Else a NOT FOUND message.
+DISPLAY option should display all the information of books stored so far.
+- FILTER option should display a list of all books of given author.
+- Design Menu Driven Program.
+(Implement Q13 by file handling, wherein store the entire information input by user
+into a file.txt and all display, find, filter functions should access data from the file.txt)
